@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <title>Beer Bazzar</title> 
+</head>
+<body>
+    <nav>
+        <div class="texture">
+            <div class="side1">
+                <a href="/">Home</a>
+                <a href="#about">About</a>
+                <a href="/blogs">Blog</a>
+                <a href="#reviews">Reviews</a>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    Beer<br>&nbsp;&nbsp;&nbsp;Bazzar
+                </a>
+            </div>
+            <div class="side2">
+                <a href="./beerguide">Beer Guide</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="main" data-scroll-container>
+        <div class="blog-page">
+            <div class="texture">
+                <div class="heading">
+                    <h1>
+                        Blogs
+                    </h1>
+                </div>
+            </div>
+                <% const blogGroups = Math.ceil(blogs.length / 4); %>
+                <% for(let i = 0; i < blogGroups; i++) { %>
+                    <div class="texture">
+                    <div class="section">
+                        <ul class="main-ul">
+                            <% if (blogs[i * 4]) { %>
+                                <li class="blog_side1">
+                                    <img src="<%= blogs[i * 4].imageUrl %>" alt="<%= blogs[i * 4].title %>">
+                                </li>
+                                <li class="blog_side2">
+                                    <div class="r1">
+                                        <p><%= blogs[i * 4].category %></p>
+                                        <p><%= new Date(blogs[i * 4].date).toLocaleDateString() %></p>
+                                    </div>
+                                    <div class="r2">
+                                        <h1><%= blogs[i * 4].title %></h1>
+                                        <p><%= blogs[i * 4].paragraph %></p>
+                                    </div>
+                                </li>
+                            <% } %>
+                        </ul>
+                        <div class="container">
+                            <% for(let j = 1; j <= 3; j++) { %>
+                                <% if (blogs[i * 4 + j]) { %>
+                                    <ul>
+                                        <li class="blog_side1" id="sub_container">
+                                            <img src="<%= blogs[i * 4 + j].imageUrl %>" alt="<%= blogs[i * 4 + j].title %>">
+                                        </li>
+                                        <li class="blog_side2">
+                                            <div class="r1">
+                                                <p id="category_text"><%= blogs[i * 4 + j].category %></p>
+                                                <p><%= new Date(blogs[i * 4 + j].date).toLocaleDateString() %></p>
+                                            </div>
+                                            <div class="r2">
+                                                <h1><%= blogs[i * 4 + j].title %></h1>
+                                                <p><%= blogs[i * 4 + j].paragraph %></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                <% } %>
+                            <% } %>
+                        </div>
+                    </div>
+                    </div>
+                <% } %>
+
+
+
+                
+            </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>   
+<script>
+        const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+    });
+</script>
+</body>
+</html>

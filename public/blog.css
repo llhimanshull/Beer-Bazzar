@@ -1,0 +1,142 @@
+:root {
+    --pastel-orange: #ec481f;
+    --texture:#f5f0e7;
+    --bg: #171717;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body{
+    overflow: hidden;
+}
+ul{
+   display: flex;
+   flex-direction: row;
+    border: solid 2px var(--pastel-orange);
+}
+img{
+    overflow: hidden;
+    object-fit: cover;
+} 
+h1{
+    text-transform: capitalize;
+    font-size: 24px;
+    margin: 10px;
+    font-family:"suve";
+}
+h1:hover{
+    color: var(--pastel-orange);
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+}
+p{
+    text-transform: capitalize;
+    font-size: 15px;
+    margin: 0px 10px;
+    padding: 0px;
+    letter-spacing:normal;
+    font-family: "Source Code Pro";
+    width: fit-content;
+    color: black;
+    height: fit-content;
+}
+.blog-page {
+    width: 100vw;
+    min-height:100vh;
+    margin: 0px;
+    background-color: var(--texture);
+}
+.blog-texture{
+    width: 100%;
+     height: 100vh;
+    background:url("./images/background.jpg");
+    mix-blend-mode: multiply;
+    background-repeat: repeat;
+    background-size: cover;
+}
+.blog_side1 , .blog_side2{
+    width:50%;
+    height: 100%;
+}
+.blog_side1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+#sub_container{
+    width: 17vw;
+}
+#category_text{
+    color: var(--pastel-orange);
+}
+.blog_side2{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.r1 , .r2{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.r1{
+   
+    height: auto;
+    overflow: hidden;
+}
+.r1 p{
+    font-size: 11px;
+}
+.r2{
+    flex-direction: column;
+}
+
+.section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.main-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    min-height: 80vh;
+    margin-right: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+}
+.container img{
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+li {
+    margin: 5px 0;
+    padding: 10px;
+  
+}

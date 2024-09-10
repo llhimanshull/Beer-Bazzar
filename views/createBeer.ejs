@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Beer</title>
+</head>
+<body>
+    <h1>Create New Beer</h1>
+    <form action="/admin/beer/create" method="post" enctype="multipart/form-data">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="popularity">popularity</label>
+        <input type="number" id="popularity" name="popularity"  required><br><br>
+        
+        <label for="description">description</label><br>
+        <textarea id="paragraph" name="description" rows="10" cols="50" required></textarea><br><br>
+        
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image"><br><br>
+
+        <button type="submit">Create Beer</button>
+    </form>
+</body>
+</html>

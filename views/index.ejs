@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Beer Bazzar</title>
+</head>
+
+<body>
+    <!-- Age Verification Pop-Up -->
+    <div id="age-verification" class="popup">
+        <p id="text">Are you 18 years old or older?</p>
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+
+    <!--visitor popup-->
+    <div id="visitor" class="popup" style="display: none;">
+        <h2>Enter the Details</h2>
+        <form id="visitor-form">
+            <input type="text" id="name" name="name" required placeholder="name">
+            <input type="email" id="email" name="email" required placeholder="email">
+            <input type="text" id="number" name="number" required placeholder="number">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <nav id="navbar">
+        <div class="texture">
+            <div class="side1">
+                <a href="/">Home</a>
+                <a href="#about">About</a>
+                <a href="blogs">Blog</a>
+                <a href="#reviews">Reviews</a>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    Beer<br>&nbsp;&nbsp;&nbsp;Bazzar
+                </a>
+            </div>
+            <div class="side2">
+                <a href="./beerguide">Beer Guide</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="main" id="main" data-scroll-container>
+        <div class="page p1" data-scroll data-scroll-speed="-2">
+            <div class="texture">
+                <div class="heading">
+                    <h1>
+                        welcome to Beer bazzar
+                    </h1>
+                </div>
+                <div class="sub-heading">
+                    <h2>Your Ultimate Source for Beer Knowledge and Culture</h2>
+                </div>
+                <!-- Swiper Container -->
+                <div id="beer-container" class="beer-container">
+                    <% beers.forEach((beer, index)=> { %>
+                        <div class="beer-slide" data-index="<%= index %>">
+                            <div class="beer-info">
+                                <h2 class="beer-name">
+                                    <%= beer.name %>
+                                </h2>
+                                <p class="beer-description">
+                                    <%= beer.description %>
+                                </p>
+                                <p class="beer-popularity">Popularity: <%= beer.popularity %>
+                                </p>
+                            </div>
+                            <div class="beer-background" style="background-image: url('<%= beer.imageUrl %>');"></div>
+                        </div>
+                        <% }) %>
+                            <button id="prev">P</button>
+                            <button id="next">N</button>
+                </div>
+                <!-- End of Swiper Container -->
+            </div>
+        </div>
+        <div class="moving_text_container" id="direction">
+            <div class="rotate r5"><span data-scroll data-scroll-speed="20" data-scroll-target="#direction"
+                    data-scroll-direction="horizontal">health risk apply</span></div>
+            <div class="rotate r4"><span data-scroll data-scroll-speed="-16" data-scroll-target="#direction"
+                    data-scroll-direction="horizontal">drive soberly</span></div>
+        </div>
+        <div class="page p2">
+            <div class="texture"></div>
+        </div>
+        <div class="page p3">
+            <div class="texture">
+                <form action="/createReview" method="post" name="review-form" data-scroll data-scroll-speed="3">
+                    <div class="side1">
+                        <label for="name">name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                    </div>
+                    <div class="side2">
+                        <label for="description">description</label><br>
+                        <textarea id="paragraph" name="description" rows="10" cols="50" required></textarea><br><br>
+                    </div>
+                    <button type="submit">Create Review</button>
+                </form>
+                <div class="review_container" data-scroll data-scroll-speed="2">
+                    <h2>All Reviews</h2>
+                    <ul>
+                        <% reviews.forEach((review, index)=> { %>
+                            <li class="review-info">
+                                <strong>
+                                    <%= review.name %>:
+                                </strong>
+                                <p>
+                                    <%= review.description %>
+                                </p>
+                            </li>
+
+                            <% }) %>
+                    </ul>
+                </div>
+
+                <div class="top-brand-container" data-scroll data-scroll-speed="1">
+                    <h2>Top Brand's</h2>
+                    <div class="brand-container">
+                        <img src="../images/heineken logo.png" alt="beer logo" >
+                        <img src="../images/pngwing.com (6).png" alt="beer logo">
+                        <img src="../images/pngwing.com (7).png" alt="beer logo" >
+                        <img src="../images/pngwing.com (8).png" alt="beer logo">
+                        <img src="../images/pngwing.com (10).png" alt="beer logo">
+                        <img src="../images/pngwing.com (9).png" alt="beer logo">
+                        <img src="../images/pngwing.com (11).png" alt="beer logo">
+                        <img src="../images/pngwing.com (12).png" alt="beer logo">
+                        <img src="../images/pngwing.com (14).png" alt="beer logo">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page p4">
+             <footer data-scroll data-scroll-container="2"></footer>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

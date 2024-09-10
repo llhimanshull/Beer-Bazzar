@@ -1,0 +1,578 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: "carter";
+    src: url(./fonts/Carters\ Shadow.ttf);
+}
+
+@font-face {
+    font-family: "rock";
+    src: url(./fonts/TextFonts.net_caredrock-font/Caredrock\ Shadow.ttf);
+}
+
+@font-face {
+    font-family: "suve";
+    src: url(./fonts/souvenir-cufonfonts/SouvenirB.ttf);
+}
+
+:root {
+    --pastel-orange: #ec481f;
+    --texture: #faebd7;
+    --bg: #171717;
+}
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: #28282B;
+}
+
+a {
+    font-size: 15px;
+    font-family: "suve";
+    color: var(--pastel-orange);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+
+.main {
+    position: relative;
+    top: 15vh;
+    width: 100vw;
+}
+
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 12px;
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+    z-index: 999;
+}
+
+.popup button,
+p {
+    width: 10vw;
+    height: 5vh;
+    margin: 8px;
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
+    font-family: suve;
+    color: var(--pastel-orange);
+}
+
+.popup p {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: suve;
+    color: var(--pastel-orange);
+}
+
+#visitor {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+    width: 30vw;
+    height: 30vw;
+    color: var(--pastel-orange);
+}
+
+#visitor input {
+    width: 20vw;
+    height: 5vh;
+    margin: 15px;
+    border: none;
+    border-radius: 32px;
+    text-align: center;
+    font-family: suve;
+    color: var(--pastel-orange);
+    text-transform: capitalize;
+    background-color: var(--texture);
+}
+
+input::placeholder {
+    color: var(--pastel-orange);
+}
+
+#visitor-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.texture {
+    width: 100%;
+    height: 100%;
+    background: url("./images/background.jpg");
+    mix-blend-mode: multiply;
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 0px;
+    background-color: var(--texture);
+    z-index: 99;
+    pointer-events: none;
+    /* background-color:var(--dark-brown); */
+}
+
+nav .texture {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.side1,
+.side2,
+.logo {
+    width: 30vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vw 3vw;
+    overflow: hidden;
+}
+
+.logo {
+    height: 12vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    height: 12vh;
+    line-height: 2vw;
+    font-family: rock;
+    text-transform: lowercase;
+    font-size: 3vw;
+}
+
+.side2 {
+    height: auto;
+    justify-content: space-between;
+}
+
+.side1 a,
+.side2 a {
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+}
+
+.side1 a:hover,
+.side2 a:hover {
+    background-color: var(--texture);
+    scale: 1.1;
+    overflow: hidden;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-color: var(--texture);
+}
+
+.p1 {
+    height: 120vh;
+    z-index: 1;
+}
+
+.heading,
+.sub-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.sub-heading {
+    padding: 4vh;
+    background-color: #ec481f;
+}
+
+.sub-heading h2 {
+    color: #f5f0e7;
+    font-family: "suve";
+}
+
+.heading h1 {
+    margin: 30px;
+    font-size: 5vw;
+    text-transform: uppercase;
+    color: var(--pastel-orange);
+    font-family: "carter";
+}
+
+/* public/styles.css */
+#beer-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    margin: 10px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.beer-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+    flex-shrink: 0;
+    background-color: #28282B;
+}
+
+.beer-slide.active {
+    display: block;
+}
+
+.beer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.beer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+}
+
+.beer-name {
+    font-size: 3em;
+    margin: 0;
+}
+
+.beer-description {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.beer-popularity {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.2em;
+}
+
+.beer-container button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--texture);
+    color: var(--pastel-orange);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+.beer-info h2 {
+    font-size: 8vw;
+    color: antiquewhite;
+}
+
+.beer-info p {
+    color: antiquewhite;
+    width: 80%;
+    font-size: 1vw;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.moving_text_container {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rotate {
+    font-size: 9vw;
+    font-weight: 600;
+    line-height: 1;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+.rotate span {
+    min-width: 100vw;
+    background-color: black;
+    display: block;
+    padding: 0 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: red;
+}
+
+.r5 {
+    top: 20%;
+    transform: rotate(-8deg);
+}
+
+.r4 {
+    top: 50%;
+    transform: rotate(-8deg);
+}
+
+.p2 {
+    display: flex;
+    align-items: flex-end;
+    height: 50vh;
+}
+
+.p2 .texture {
+    height: 50vh;
+}
+
+.p3 {
+    height: 200vh;
+    background-color: var(--texture);
+}
+
+/*review form*/
+.p3 form {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #28282B;
+    margin: 4.5vh 0px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.p3 form label {
+    width: fit-content;
+    height: fit-content;
+    font-family: suve;
+    text-transform: capitalize;
+    color: var(--texture);
+    font-size: 2vh;
+    margin: 5vh;
+    padding: 15px;
+}
+
+.p3 form input {
+    width: 20vw;
+    border: none;
+    border-radius: 28px;
+    height: 5vh;
+    background-color: var(--texture);
+}
+
+.p3 form #paragraph {
+    height: 10vh;
+    border: none;
+    border-radius: 28px;
+    background-color: var(--texture);
+}
+
+.p3 form button {
+    width: 7vw;
+    height: 5vh;
+    border-radius: 28px;
+    border: none;
+    font-family: suve;
+    text-align: center;
+    background-color: var(--pastel-orange);
+    color: var(--texture);
+    padding: 1vh;
+}
+
+.p3 .side1,
+.p3 .side2 {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.p3 .side2 {
+    margin: 0px 6vw 0px 0vw;
+}
+
+.p3 input,
+.p3 textarea {
+    justify-content: center;
+    text-align: center;
+}
+
+.review_container {
+    width: 100%;
+    height: 40vh;
+    background-color: #28282B;
+    overflow: hidden;
+    position: relative;
+}
+
+.review_container h2 {
+    width: 100%;
+    height: fit-content;
+    padding: 2vh;
+    padding-left: 5.5vw;
+    text-transform: uppercase;
+    background-color: var(--pastel-orange);
+    color: var(--texture);
+    font-family: suve, sans-serif;
+    /* Adjust font family */
+    margin: 0;
+}
+
+.review_container ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    position: absolute;
+    animation: scrollAnimation 35s linear infinite;
+    animation-timing-function: linear;
+    width: max-content;
+}
+
+.review-info {
+    flex: 0 0 auto;
+    width: 25vw;
+    padding: 2vh;
+    margin: 10px;
+    border: solid 1px var(--pastel-orange);
+    white-space: normal;
+    border-radius: 28px;
+    /* Allow wrapping inside each list item */
+}
+
+.review-info strong,
+.review-info p {
+    width: 100%;
+    height: fit-content;
+    font-size: small;
+    color: var(--pastel-orange);
+    font-family: source code pro;
+    text-transform: capitalize;
+}
+
+.review_container:hover ul {
+    animation-play-state: paused;
+    /* Pause animation on hover */
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(100%);
+        /* Start outside viewport on the right */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* End outside viewport on the left */
+    }
+}
+
+.top-brand-container {
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    overflow: hidden;
+}
+
+.top-brand-container h2{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    padding-left: 5vw;
+    background-color: var(--pastel-orange);
+    color: var(--texture);
+    font-family: suve;
+    text-transform: uppercase;
+}
+.brand-container{
+    padding: 0vw 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, .5fr);
+    gap: 10px;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+  
+}
+.brand-container img{
+    width: 17vw;
+    height: 17vw;
+    object-fit: contain;
+    margin: 0px 4px;
+}
+.p4{
+    height: 70vh;
+}
